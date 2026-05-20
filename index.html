@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolgozat</title>
+</head>
+<body>
+     <input type="file" onchange="olvas(this)">
+</body>
+<script>
+
+//Az állomány minden sorában egy jelölt által elért eredmények találhatók szóközzel elválasztva. Az információk a következő sorrendben követik egymást: a körzet száma, ahol a jelölt indult; a jelölt által kapott szavazatok száma, a jelölt vezetékneve, a jelölt utóneve, a jelölt pártja, a független jelölteknél egy "-" karakter található.
+
+        class szavazas{
+        constructor(korzet, szavazatSzam, vezeteknev, utonev, part){
+            this.korzet = korzet;
+            this.szavazatSzam = szavazatSzam;
+            this.vezeteknev = vezeteknev;
+            this.utonev = utonev;
+            this.part = part;
+        }
+    }
+
+
+    function olvas(mit){
+        let file = mit.files[0];
+        let olvaso = new FileReader();
+        console.log(file);
+
+        olvaso.readAsText(file);
+
+        olvaso.onload = function(){
+            let tartalom = olvaso.result;
+            let szavazatok = [];
+            let sorok = tartalom.split("\r\n");
+
+            for (let i = 0; i < sorok.length - 1; i++) {
+                let darabok = sorok[i].split(" ");
+                let sz = new szavazas(darabok[0], parseInt(darabok[1]), darabok[2], darabok[3], darabok[4]);
+                szavazatok.push(sz);
+            }
+
+            console.log("Szavazáson indultak száma: " + szavazatok.length);
+
+            let zepesek = 0;
+            for (let i = 0; i < szavazatok.length - 1; i++) 
+            {
+                if (szavazatok[i].part == "ZEP") 
+                {
+                    zepesek += szavazatok[i].szavazatSzam;
+
+                }
+                
+            }
+
+            console.log("ZEP-re szavazók száma: " + zepesek);
+
+            let legtobb = szavazatok[0].szavazatSzam;
+            index = 0;
+            for (let i = 0; i < szavazatok.length-1; i++) {
+                if (szavazatok[i].szavazatSzam > legtobb && szavazatok[i].korzet === 1)
+                {
+                    legtobb = szavazatok[i].szavazatSzam;
+                    index = i; 
+                }
+            }
+            console.log("A legtöbb szavazatot az 1-es körzetben " + szavazatok[index].vezeteknev +" " + szavazatok[index].utonev + " kapta");
+
+            let partok = new Set();
+            for (let i = 0; i < szavazatok.length-1; i++) {
+                if (szavazatok[i].part != "-")
+                {
+                    partok.add(szavazatok[i].part);
+                }
+            }
+
+            for (const sz of partok) {
+                jeloltek = 0;
+                for (let i = 0; i < szavazatok.length - 1; i++)
+                {
+                    if(szavazatok[i].part == sz){
+                        jeloltek++;
+                    }
+                }
+                console.log(sz + " : " + jeloltek + " jelolt.");
+            }
+
+            console.log("pártatlanok: ");
+            for (let i = 0; i < szavazatok.length - 1; i++) 
+            {
+                if (szavazatok[i].part === "-")
+                {
+                    console.log(szavazatok[i].vezeteknev + " " + szavazatok[i].utonev + " " + szavazatok[i].szavazatSzam);
+                }
+                
+            }
+            
+        }
+    }   
+</script>
+
+</html>

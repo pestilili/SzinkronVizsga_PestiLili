@@ -1,0 +1,79 @@
+nav{
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    font-size: 3em;
+    position: sticky;
+}
+
+body{
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/068/254/092/small/cheerful-pizza-slice-with-googly-eyes-on-red-checkered-tablecloth-free-photo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav div div{
+    display: none;
+}
+
+nav div{
+    position: relative;
+}
+
+nav div:hover div{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+}
+
+nav a{
+    background-color: yellowgreen;
+    color: blue;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+div.alap{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div.card{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 2em;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: chartreuse;
+}
+
+div.card div{
+    width: 380px;
+    padding: 10px;
+    text-align: center;
+}
+
+div.card div img{
+    width: 380px;
+}
+
+button{
+    background-image: linear-gradient(to bottom, white, green);
+    font-family: inherit;
+    font-size: 1em;
+    padding: 2px;
+}
+
+button:hover{
+    cursor: pointer;
+}

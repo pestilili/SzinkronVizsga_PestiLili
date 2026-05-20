@@ -1,0 +1,25 @@
+div.kartya{
+    width: 200px;
+    height: 200px;
+    background-color: dimgray;
+    border-radius: 5px;
+}
+
+#tabla{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    width: 806px;
+    height: 806px;
+    margin: auto;
+}
+
+div.kartya:hover{
+    background-color: rgb(58, 58, 58);
+    box-shadow: 0 0 5px black;
+}
+
+img.kep{
+    width: 200px;
+    height: 200px;
+}

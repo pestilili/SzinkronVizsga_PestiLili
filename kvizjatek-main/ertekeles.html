@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eredmény</title>
+</head>
+<body>
+    <h1 id="eredmeny">
+
+    </h1>
+</body>
+<script>
+    let valaszok = document.location.search.split("?")[1].split("&");
+    let helyesek = new Array(10);
+    for (let i = 0; i < 10; i++) {
+        let kerdes = valaszok[i].split[0];
+        let valasz = valaszok[i].split[1];
+        if (kerdes == "hanyadikBolygo") {
+            helyesek[i] = (valasz == "3")
+        }
+        else if (kerdes == "ustokos") {
+            helyesek[i] = (valasz == "nap")
+        }
+        else if (kerdes == "") {
+            
+        }
+    }
+</script>
+</html>

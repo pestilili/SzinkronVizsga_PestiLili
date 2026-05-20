@@ -1,0 +1,89 @@
+body{
+    background-image: url(hatterkep.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main{
+    margin: auto;
+    border-radius: 10px;
+    width: 80%
+}
+
+#question{
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#answer1 > input{
+    appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(142, 243, 247);
+    
+}
+
+#answer1 > input::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    width: 46px;
+    height: 48px;
+    background: url(sun.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+#answer1 > input::-moz-range-thumb {
+    appearance: none;
+    border: none;
+    width: 23px;
+    height: 24px;
+    background: url(sun.png);
+    background-size: contain;
+}
+
+#answer1 > input::-moz-range-progress{
+    background-color: rgb(82, 77, 133);
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-evenly;
+}
+
+#answers > div{
+    display: none;
+    
+}
+
+#questions > p{
+    display: none;
+    
+}
+
+#answers > div:first-child{
+    display: unset;
+}
+
+#questions > p:first-child{
+    display: unset;
+}
+
+#answers{
+    margin-top: 20px;
+    background-color: rgba(131, 131, 211, 0.562);
+    height: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+#questions{
+    margin-top: 40px;
+   background-color: rgba(131, 131, 211, 0.562); 
+}

@@ -1,0 +1,122 @@
+1. Sorozatszámítás (összegzés)
+Egy sorozathoz egy értéket rendelő feladattípusokhoz. 
+Bemenet: N, A(), művelet
+Kimenet: S 
+Változók: N: egész * megadott sorozat elemeinek száma +
+ A: tömb (1..N) elemtípus [ a sorozat elemei ] 
+ S: elemtípus * végeredmény +
+Algoritmus: 
+ 
+Sorozatszámítás (N,A,S)
+ S:= kezdőérték
+ Ciklus i=1-től N-ig
+ S:= S művelet A(i)
+ Ciklus vége
+Eljárás vége
+
+
+2. Eldöntés
+Egy sorozathoz egy logikai értéket rendelő feladattípusokhoz. A logikai érték „igaz”-at vesz 
+fel, ha a sorozatban létezik adott (T) tulajdonságú elem, és „hamis”-at vesz fel, ha ilyen 
+tulajdonságú nincs a sorozatban.
+Bemenet: N, A(), T tulajdonság
+Kimenet: VAN: igaz/hamis 
+Változók: N: egész * megadott sorozat elemeinek száma +
+ A: tömb (1..N) elemtípus [ a sorozat elemei ] 
+ VAN: logikai * végeredmény +
+Algoritmus: 
+ 
+Eldöntés (N,A,VAN)
+ i:= 1
+ Ciklus amíg i≤N és A(i) nem T tulajdonságú
+ i:= i+1
+ Ciklus vége
+ VAN:=(i≤N) 
+Eljárás vége
+
+
+3. Kiválasztás 
+Egy sorozathoz egy értéket rendelő feladattípusokhoz.
+Adott egy N elemű sorozat és egy, a sorozat elemein értelmezett T tulajdonság. Azt is 
+tudjuk, hogy a sorozatban van legalább egy T tulajdonságú elem (előfeltétel). A feladat 
+ezen elem sorszámának meghatározása.
+Bemenet: N, A(), T tulajdonság
+Kimenet: sorszám
+Változók: N: egész [ megadott sorozat elemeinek száma +
+ A: tömb (1..N) elemtípus [ a sorozat elemei ] 
+ SORSZAM: egész [ T tulajdonságú elem sorszáma ] 
+Algoritmus: 
+ 
+Kiválasztás (N,A,SORSZAM)
+ i:= 1
+ Ciklus amíg A(i) nem T tulajdonságú
+ i:= i+1
+ Ciklus vége
+ SORSZAM:= i 
+Eljárás vége
+
+
+4. Keresés
+Egy sorozathoz egy értéket rendelő feladattípusokhoz. 
+A feladat lényege, hogy a sorozatban egy adott T tulajdonságú elemet kell meghatároznunk 
+(magát az elemet, vagy a sorozatbeli sorszámát szokás kérni). Nem biztos, hogy a 
+sorozatban van ilyen elem. 
+Bemenet: N, A(), T tulajdonság
+Kimenet: sorszám
+Változók: N: egész * megadott sorozat elemeinek száma +
+ A: tömb (1..N) elemtípus [ a sorozat elemei ] 
+ SORSZAM: egész * a T tulajdonságú elem sorszáma+
+Algoritmus: 
+ 
+Keresés (N,A,SORSZAM)
+ i:= 1
+ Ciklus amíg i≤N és A(i) nem T tulajdonságú
+ i:= i+1
+ Ciklus vége
+ VAN:=(i≤N) 
+ Ha VAN akkor SORSZAM:=i 
+Eljárás vége
+
+
+5. Megszámolás
+Egy sorozathoz egy értéket rendelő feladattípusokhoz. 
+Rendelkezésünkre áll egy N elemű sorozat és egy, a sorozat elemein értelmezett T 
+tulajdonság. Az a feladat, hogy a T tulajdonsággal rendelkező elemeket megszámoljuk.
+Bemenet: N, A(), T tulajdonság
+Kimenet: DB
+Változók: N: egész * megadott sorozat elemeinek száma +
+ A: tömb (1..N) elemtípus [ a sorozat elemei ] 
+DB: egész * T tulajdonságú elemek darabszáma+
+Algoritmus: 
+ 
+Megszámolás (N,A,DB)
+ DB:= 0
+ Ciklus i=1-től N-ig
+ Ha A(i) T tulajdonságú akkor DB:=DB+1
+ Ciklus vége
+ Eljárás vége
+
+
+5. Maximumkiválasztás
+Egy sorozathoz egy értéket rendelő feladattípusokhoz. 
+Adott egy N elemű sorozat. A feladat ezen sorozat legnagyobb elemének (illetve feladattól 
+függően legnagyobb értékének) meghatározása. Hasonló feladat – csak a relációt kell 
+megfordítani – a minimumkiválasztás.
+Bemenet: N, A() 
+Kimenet: INDEX, MAXIMUM (feladattól függően)
+Változók: N: egész [ megadott sorozat elemeinek száma +
+ A: tömb (1..N) elemtípus [ a sorozat elemei ] 
+ INDEX: egész [ maximális érték helye a sorozatban] 
+MAXIMUM: elemtípus [ maximális érték+
+12
+Algoritmus: 
+ 
+Maxinex (N,A,INDEX,MAXIMUM)
+ INDEX:= 1 
+ Ciklus i=2-től N-ig
+ Ha A(i) > A(INDEX) akkor INDEX:= i 
+ Ciklus vége
+ MAXIMUM := A(INDEX) 
+ Eljárás vége
+
+

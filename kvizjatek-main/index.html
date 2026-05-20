@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvízjáték</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <form action="ertekeles.html" method="get">
+        <div id="questions">
+            <p id="question1">A Naptól számítva hanyadik bolygó a Föld a naprendszerben ?</p>
+            <p id="question2" >Milyen irányba néz egy üstökös csóvája ?</p>
+            <p id="question3">Nevezd meg a teleszkóp 6-os számmal jelölt részét.</p>
+            <p id="question4">Mennyi a telihold abszolút fényessége magnitúdóban megadva ?</p>
+            <p id="question5">Mekkora a Heliopauza átlag átmérője ? (3 számjegy, AU (astronomical unit))</p>
+            <p id="question6">A felsorolt képletek közül, melyikek azok amik a Kepler törvényekből származtathatók ?</p>
+            <p id="question7">Számold ki, hogy, hány földi napig tart egy év a Vénuszon Kepler III. törvényének segítségével. A Vénusz 0,723 CSE távolságban kering a Nap körül, a föld 1 CSE távolságban kering a nap körül. A Földön egy év 365 napig tart. r<sub>1</sub> T<sub>1</sub>=365 </p>
+            <p id="question8">Melyik Lorentz transzformáció ?</p>
+            <p id="question9">A Taurus űrkompja mikor tette meg az első teljes keringését, ha 2020. 01. 03.-án állt kör alakú pályára a nap körül, ha feltételezzük, hogy pályája stabil és 800 millió kilóméter a sugarú.</p>
+            <p id="question10">10. Mit tanulmányozott az első személy, aki jelentős csillagászati áttörést ért el a képen Einstein sorában, Paul Dirac és Hans Kramers között ülő ember Nobel díjat érő felfedezésével ? </p>
+        </div>
+        <div id="answers">
+            <div id="answer1">
+                <input type="range" name="hanyadikBolygo" id="hanyadikBolygo" min="1" max="8" value="1" oninput="this.nextElementSibling.value = this.value">
+                <output>1</output>
+            </div>
+            <div id="answer2">
+                <div id="answer2.1">
+                    <input type="radio" name="ustokos" id="nap" value="nap">
+                    <label for="nap">Mindig a nap irányába néz.</label>
+                </div> 
+                <div id="answer2.2">
+                    <input type="radio" name="ustokos" id="napellen" value="napellen">
+                    <label for="nap">Mindig a nappal ellentétes irányába néz.</label>
+                </div> 
+                <div id="answer2.3">
+                    <input type="radio" name="ustokos" id="iranyellen" value="iranyellen">
+                    <label for="iranyellen">Mindig a haladási irányával ellentétes irányba néz.</label>
+                </div>   
+                <div id="answer2.4">
+                    <input type="radio" name="ustokos" id="norules" value="norules">
+                    <label for="norules">Nincs rá szabályosság.</label>
+                </div>
+            </div>
+            <div id="answer3">
+                <img src="telescopeParts.jpg" alt="teleszkop reszei" style="width: 200px;">
+                <input type="text" id="telescopeParts" >
+            </div>
+            <div id="answer4">
+                <input type="number" name="magnitudo" id="magnitudo" min="-27" max="10">  
+            </div>
+            <div id="answer5">
+               <input type="number" name="heliopauza" id="heliopauza" min="0" max="999">
+            </div>
+            <div id="answer6">
+                <div id="answer6.1">
+                    <input type="checkbox" name="keplerkeplet" id="kepler3" value="kepler3">
+                    <label for="kepler3"><img src="kepler3.png" alt="kepler3" style="width: 160px;"></label>
+                </div>
+                <div id="answer6.2">
+                    <input type="checkbox" name="keplerkeplet" id="tavolsag_modulus" value="tavolsag_modulus">
+                    <label for="tavolsag_modulus"><img src="tavolsag_modulus.png" alt="tavolsag_modulus" style="width: 160px;"></label>
+                </div>
+                <div id="answer6.3">
+                    <input type="checkbox" name="keplerkeplet" id="kepler2" value="kepler2">
+                    <label for="kepler2"><img src="kepler2.png" alt="kepler2" style="width: 160px;"></label>
+                </div>
+                <div id="answer6.4">
+                    <input type="checkbox" name="keplerkeplet" id="kepler1" value="kepler1">
+                    <label for="kepler1"><img src="kepler1.png" alt="kepler1" style="width: 160px;"></label>
+                </div>
+            </div>
+            <div id="answer7">
+                
+            </div>
+            <div id="answer8">
+                test2
+            </div>
+            <div id="answer9">
+                test2
+            </div>
+            <div id="answer10">
+                test2
+            </div>
+        </div>
+        </form>
+    </div>  
+    <div id="buttons">
+        <div onclick="changeTask(1)"><img src="csv2.png" alt="csillagvizsgalo" title="1. kérdés"></div>
+        <div onclick="changeTask(2)"><img src="csv2.png" alt="csillagvizsgalo" title="2. kérdés"></div>
+        <div onclick="changeTask(3)"><img src="csv2.png" alt="csillagvizsgalo" title="3. kérdés"></div>
+        <div onclick="changeTask(4)"><img src="csv2.png" alt="csillagvizsgalo" title="4. kérdés"></div>
+        <div onclick="changeTask(5)"><img src="csv2.png" alt="csillagvizsgalo" title="5. kérdés"></div>
+        <div onclick="changeTask(6)"><img src="csv2.png" alt="csillagvizsgalo" title="6. kérdés"></div>
+        <div onclick="changeTask(7)"><img src="csv2.png" alt="csillagvizsgalo" title="7. kérdés"></div>
+        <div onclick="changeTask(8)"><img src="csv2.png" alt="csillagvizsgalo" title="8. kérdés"></div>
+        <div onclick="changeTask(9)"><img src="csv2.png" alt="csillagvizsgalo" title="9. kérdés"></div>
+        <div onclick="changeTask(10)"><img src="csv2.png" alt="csillagvizsgalo" title="10. kérdés"></div>
+    </div>
+</body>
+<script>
+    function changeTask(tToChangeTo) {
+        changeQuestion(tToChangeTo);
+        changeAnswers(tToChangeTo);
+        changeButton(bToChangeTo);
+    }
+
+    function changeQuestion(qToChangeTo) {
+        //Összes kérdés elrejtése
+        for (let i = 1; i < 11; i++) {
+            document.getElementById("question" + i).style.display = "none";
+        }
+        //Kívánt kérdés megjelenítése
+        document.getElementById("question" + qToChangeTo).style.display=  "initial";
+    }
+
+    function changeAnswers(aToChangeTo) {
+        //Összes válaszlehetőség elrejtése
+        for (let i = 1; i < 11; i++) {
+            document.getElementById("answer" + i).style.display = "none";
+        }
+        document.getElementById("answer" + aToChangeTo).style.display = "inherit";
+    }
+
+    function changeButton(bToChangeTo) {
+        for (let i = 1; i < 11; i++) {
+            document.getElementById("button" + i).style.opacity = "1.00";
+        }
+        document.getElementById("answer" + bToChangeTo).style.opacity = "0.5";
+    }
+</script>
+</html>

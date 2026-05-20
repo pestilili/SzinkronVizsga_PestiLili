@@ -1,0 +1,110 @@
+2 Dimenziós Tömbök C#-ban – Rövid Segédanyag
+
+1. Mi az a 2 dimenziós tömb?
+
+A 2 dimenziós tömb egy olyan adatszerkezet, amely sorokból és
+oszlopokból áll. Olyan, mint egy táblázat vagy mátrix.
+
+Példa (3x3):
+
+1 2 3
+4 5 6 
+7 8 9
+
+Indexelés: [sor, oszlop]
+
+Példa: [0,0] = első sor első elem [1,2] = második sor harmadik elem
+
+------------------------------------------------------------------------
+
+2. Tömb deklarálása
+
+int[,] matrix = new int[3,3];
+
+Magyarázat: int → egész szám típus [,] → két dimenzió [3,3] → 3 sor és 3
+oszlop
+
+------------------------------------------------------------------------
+
+3. Inicializálás értékekkel
+
+int[,] matrix = { {1,2,3}, {4,5,6}, {7,8,9} };
+
+------------------------------------------------------------------------
+
+4. Elem elérése
+
+Szintaxis:
+
+matrix[sor, oszlop]
+
+Példa:
+
+Console.WriteLine(matrix[1,2]);
+
+Kimenet: 6
+
+------------------------------------------------------------------------
+
+5. Elem módosítása
+
+matrix[0,1] = 10;
+
+------------------------------------------------------------------------
+
+6. Tömb bejárása (for ciklus)
+
+for (int i = 0; i < 3; i++) { for (int j = 0; j < 3; j++) {
+Console.Write(matrix[i,j] + ” “); } Console.WriteLine(); }
+
+------------------------------------------------------------------------
+
+7. Méret lekérdezése
+
+matrix.GetLength(0) → sorok száma matrix.GetLength(1) → oszlopok száma
+
+Példa:
+
+for (int i = 0; i < matrix.GetLength(0); i++) { for (int j = 0; j <
+matrix.GetLength(1); j++) { Console.Write(matrix[i,j] + ” “); }
+Console.WriteLine(); }
+
+------------------------------------------------------------------------
+
+8. Teljes példa program
+
+using System;
+
+class Program { static void Main() { int[,] matrix = { {1,2,3}, {4,5,6},
+{7,8,9} };
+
+        for(int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for(int j = 0; j < matrix.GetLength(1); j++)
+            {
+                Console.Write(matrix[i,j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+}
+
+------------------------------------------------------------------------
+
+10. Főátló kiírása
+
+for(int i = 0; i < matrix.GetLength(0); i++) {
+Console.WriteLine(matrix[i,i]); }
+
+------------------------------------------------------------------------
+
+Rövid összefoglaló
+
+2D tömb jelölése: int[,]
+
+Elem elérése: matrix[sor, oszlop]
+
+Bejárás: két egymásba ágyazott for ciklussal
+
+Méret lekérdezése: GetLength()

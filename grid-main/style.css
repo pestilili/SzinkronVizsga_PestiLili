@@ -1,0 +1,80 @@
+.grid-container{
+    display: grid;
+    width: 1500px;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header header"
+        "aside1 main main main aside2"
+        "footer footer footer footer footer";
+    row-gap: 5px;
+    column-gap: 10px;    
+}
+
+.header{
+    background-color: rgb(182, 103, 255);
+    grid-area: header;
+}
+
+.aside1{
+    background-color: blueviolet;
+    grid-area: aside1;
+}
+
+.main{
+    background-color: rgb(83, 40, 94);
+    grid-area: main;
+}
+
+.aside2{
+    background-color: rgb(77, 2, 148);
+    grid-area: aside2;
+}
+
+.footer{
+    background-color: rgb(96, 74, 117);
+    grid-area: footer;
+}
+
+div{
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 800px){
+    .grid-container{
+    display: grid;
+    width: 800px;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "aside1"
+        "main"
+        "aside2"
+        "footer";
+    }
+}
+
+#negyzet{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: #e298ee;
+    animation-name: szinvaltas;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+
+@keyframes szinvaltas{
+    0%{background-color: #e298ee; left: 0px; transform: rotate(0deg);}
+    25%{background-color: #64246e;}
+    50%{background-color: #3f155a; left:  calc(100% - 100px);}
+    75%{background-color: #4a3792;}
+    100%{background-color: #513aa3; left: 0px; transform: rotate(360deg);}
+}
+
