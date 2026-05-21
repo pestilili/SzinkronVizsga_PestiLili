@@ -1,0 +1,67 @@
+:root{
+    --size: 80px; 
+}
+
+body{
+    background-color: #DDC3C3;
+    perspective: 30cm;
+}
+
+.tabla{
+    width: calc(var(--size) * 8);
+    height: calc(var(--size) * 8);
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    animation: tablaforog 10s infinite linear;
+    transform-style: preserve-3d;
+    transform-origin: 0% 0% 0;
+}
+
+.sor{
+    perspective: 10cm;
+    transform-style: preserve-3d;
+}
+
+@keyframes tablaforog {
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(360deg);}
+}
+
+@keyframes sotetforog{
+    0% {transform: rotateX(0deg);}
+    100% {transform: rotateX(360deg);}
+}
+
+@keyframes vilagosforog{
+    0% {transform: rotateZ(0deg);}
+    50% {transform: rotateZ(180deg) scale(0.5);}
+    100% {transform: rotateZ(360deg);}
+}
+
+.negyzet{
+    width: var(--size);
+    height: var(--size);
+}
+
+.tabla div:nth-child(odd) div:nth-child(odd){
+    background-color: #8D5F8C;
+    animation: sotetforog 2s infinite linear;
+}
+
+.tabla div:nth-child(odd) div:nth-child(even){
+    background-color: #A376A2;
+    animation: vilagosforog 2s infinite linear;
+}
+
+.tabla div:nth-child(even) div:nth-child(odd){
+    background-color:  #A376A2;
+    animation: vilagosforog 2s infinite linear;
+    
+}
+
+.tabla div:nth-child(even) div:nth-child(even){
+    background-color: #8D5F8C;
+    animation: sotetforog 2s infinite linear;
+}
+
