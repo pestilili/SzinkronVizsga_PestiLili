@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tabla">
+        <div id="n00" class="negyzet" onclick="klikk('00')"></div>
+        <div id="n01" class="negyzet" onclick="klikk('01')"></div>
+        <div id="n02" class="negyzet" onclick="klikk('02')"></div>
+        <div id="n10" class="negyzet" onclick="klikk('10')"></div>
+        <div id="n11" class="negyzet" onclick="klikk('11')"></div>
+        <div id="n12" class="negyzet" onclick="klikk('12')"></div>
+        <div id="n20" class="negyzet" onclick="klikk('20')"></div>
+        <div id="n21" class="negyzet" onclick="klikk('21')"></div>
+        <div id="n22" class="negyzet" onclick="klikk('22')"></div>
+    </div>
+</body>
+
+<script>
+    let akt = "X";
+    let tabla = [
+        [" ", " ", " "],
+        [" ", " ", " "],
+        [" ", " ", " "]
+    ]
+
+    function gyozelem(){
+        if(tabla[0][0] == tabla[0][1] && tabla[0][1] == tabla[0][2] && tabla[0][0] != " ")
+        return true;
+
+        if(tabla[1][0] == tabla[1][1] && tabla[1][1] == tabla[1][2] && tabla[1][0] != " ")
+        return true;
+
+        if(tabla[2][0] == tabla[2][1] && tabla[2][1] == tabla[2][2] && tabla[2][0] != " ")
+        return true;
+
+        if(tabla[0][0] == tabla[1][0] && tabla[1][0] == tabla[2][0] && tabla[0][0] != " ")
+        return true;
+
+        if(tabla[0][1] == tabla[1][1] && tabla[1][1] == tabla[2][1] && tabla[0][1] != " ")
+        return true;
+
+        if(tabla[0][2] == tabla[1][2] && tabla[1][2] == tabla[2][2] && tabla[0][2] != " ")
+        return true;
+
+        if(tabla[0][0] == tabla[1][1] && tabla[1][1] == tabla[2][2] && tabla[0][0] != " ")
+        return true;
+
+        if(tabla[0][2] == tabla[1][1] && tabla[1][1] == tabla[2][0] && tabla[0][2] != " ")
+        return true;
+
+        return false;
+    }
+
+
+
+
+    function klikk (melyik){
+        let i = parseInt(melyik[0]);
+        let j = parseInt(melyik[1]);
+        if (tabla[i][j] == " ")
+        {
+            let negyzet = document.getElementById("n" + melyik);
+            negyzet.innerHTML = akt;
+            tabla[i][j] = akt;
+            if(gyozelem())
+            {
+                window.alert(akt + " nyert!");
+                for(let i = 0; i <= 2; i++)
+                {
+                    for(let j = 0; j <= 2; j++)
+                    {
+                        tabla[i][j] = " ";
+                        document.getElementById("n" + i + j).innerHTML = " ";
+                    }
+                }
+                akt = "X";
+                return;
+            }
+
+            if (akt == "X")
+            {
+                akt = "O";
+            }
+            else
+            {
+                akt = "X";
+            }
+        }
+    }
+
+</script>
+
+</html>
